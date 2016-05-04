@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CRc-LS-swV">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ffP-lE-S1Y">
+            <objects>
+                <navigationController id="CRc-LS-swV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6D-Ss-NeD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QSf-tb-bV5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fy0-VE-7xs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="BonjourWebrtc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="JDJ-WV-Nsf">
+                                <rect key="frame" x="0.0" y="115" width="600" height="485"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Cl6-zn-WvO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tYc-sl-LT1"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connections:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhs-ZO-Afw">
+                                <rect key="frame" x="10" y="74" width="288" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="YYO-nZ-tcj"/>
+                                    <constraint firstAttribute="height" constant="21" id="e3S-QV-52M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JDJ-WV-Nsf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0wo-j7-bz7"/>
+                            <constraint firstItem="JDJ-WV-Nsf" firstAttribute="top" secondItem="fhs-ZO-Afw" secondAttribute="bottom" constant="20" id="2FA-3I-tQp"/>
+                            <constraint firstItem="fhs-ZO-Afw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="6CJ-TX-AeG"/>
+                            <constraint firstItem="fhs-ZO-Afw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="T18-4x-02f"/>
+                            <constraint firstAttribute="trailing" secondItem="JDJ-WV-Nsf" secondAttribute="trailing" id="VzR-nk-6aG"/>
+                            <constraint firstItem="JDJ-WV-Nsf" firstAttribute="top" secondItem="fhs-ZO-Afw" secondAttribute="bottom" constant="10" id="e0g-Lo-RWk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JDJ-WV-Nsf" secondAttribute="bottom" id="lqJ-m7-9dl"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="e0g-Lo-RWk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="wBB-VH-g8C"/>
+                    <connections>
+                        <outlet property="connectionsLabel" destination="fhs-ZO-Afw" id="jIw-Kz-Jjw"/>
+                        <outlet property="tableView" destination="JDJ-WV-Nsf" id="2qg-wb-lFb"/>
+                        <segue destination="OgX-Z6-W2G" kind="show" identifier="showVideoCall" id="U69-QE-b51"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Video Chat View Controller-->
+        <scene sceneID="yoq-MA-E00">
+            <objects>
+                <viewController id="OgX-Z6-W2G" customClass="RTCVideoChatViewController" customModule="BonjourWebrtc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NVD-be-Q31"/>
+                        <viewControllerLayoutGuide type="bottom" id="W8U-wl-NU4"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="l8T-oW-83k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zMl-wn-tbg" userLabel="Remote View" customClass="RTCEAGLVideoView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="uQ4-Yu-APu" userLabel="Local View" customClass="RTCEAGLVideoView">
+                                <rect key="frame" x="452" y="452" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="1tJ-X4-mmZ"/>
+                                    <constraint firstAttribute="width" constant="120" id="WS4-Nx-Fou"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Gy-OS-VrS" userLabel="Footer View">
+                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5vU-LF-2NF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cm-zT-eQC" userLabel="Button Container View">
+                                <rect key="frame" x="20" y="220" width="40" height="160"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpM-7t-Tpi" userLabel="Audio Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="audioOn">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="audioOff"/>
+                                        <connections>
+                                            <action selector="audioButtonPressed:" destination="OgX-Z6-W2G" eventType="touchUpInside" id="3fr-Qh-xFg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruc-3X-s7Y" userLabel="Video Button">
+                                        <rect key="frame" x="0.0" y="60" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="videoOn">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="videoOff"/>
+                                        <connections>
+                                            <action selector="videoButtonPressed:" destination="OgX-Z6-W2G" eventType="touchUpInside" id="OPb-8n-moS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-uH-CZx" userLabel="Hangup Button">
+                                        <rect key="frame" x="0.0" y="120" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="hangup">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hangupButtonPressed:" destination="OgX-Z6-W2G" eventType="touchUpInside" id="g2F-XX-t1N"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="4B4-3M-ffq"/>
+                                    <constraint firstAttribute="width" constant="40" id="ktO-UZ-O8U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="8Cm-zT-eQC" secondAttribute="centerY" id="3Fu-Dr-bMl"/>
+                            <constraint firstItem="W8U-wl-NU4" firstAttribute="top" secondItem="zMl-wn-tbg" secondAttribute="bottom" id="5Or-ve-aVF"/>
+                            <constraint firstAttribute="trailing" secondItem="zMl-wn-tbg" secondAttribute="trailing" id="93Q-7P-AUD"/>
+                            <constraint firstAttribute="trailing" secondItem="4Gy-OS-VrS" secondAttribute="trailing" id="bkc-Hp-ATK"/>
+                            <constraint firstItem="8Cm-zT-eQC" firstAttribute="leading" secondItem="l8T-oW-83k" secondAttribute="leading" constant="20" id="btX-Hg-QsD"/>
+                            <constraint firstItem="W8U-wl-NU4" firstAttribute="top" secondItem="uQ4-Yu-APu" secondAttribute="bottom" constant="28" id="ghu-U1-Zea"/>
+                            <constraint firstItem="zMl-wn-tbg" firstAttribute="top" secondItem="l8T-oW-83k" secondAttribute="top" id="k4q-Pk-d1l"/>
+                            <constraint firstAttribute="trailing" secondItem="uQ4-Yu-APu" secondAttribute="trailing" constant="28" id="ksn-hd-YyD"/>
+                            <constraint firstItem="4Gy-OS-VrS" firstAttribute="leading" secondItem="l8T-oW-83k" secondAttribute="leading" id="qGL-GD-xdw"/>
+                            <constraint firstItem="W8U-wl-NU4" firstAttribute="top" secondItem="4Gy-OS-VrS" secondAttribute="bottom" id="quV-O2-wvv"/>
+                            <constraint firstItem="zMl-wn-tbg" firstAttribute="leading" secondItem="l8T-oW-83k" secondAttribute="leading" id="rP8-DY-hhf"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="audioButton" destination="SpM-7t-Tpi" id="N4G-UQ-IB2"/>
+                        <outlet property="buttonContainerView" destination="8Cm-zT-eQC" id="UnO-3v-R9O"/>
+                        <outlet property="buttonContainerViewLeftConstraint" destination="btX-Hg-QsD" id="Mft-BB-0t7"/>
+                        <outlet property="footerView" destination="4Gy-OS-VrS" id="sAh-f3-d5r"/>
+                        <outlet property="footerViewBottomConstraint" destination="quV-O2-wvv" id="w30-ha-hY4"/>
+                        <outlet property="hangupButton" destination="wvb-uH-CZx" id="pkN-UG-tvq"/>
+                        <outlet property="localView" destination="uQ4-Yu-APu" id="Yxj-Bu-thb"/>
+                        <outlet property="localViewBottomConstraint" destination="ghu-U1-Zea" id="Qd4-vu-nG4"/>
+                        <outlet property="localViewHeightConstraint" destination="1tJ-X4-mmZ" id="H4U-31-Ka5"/>
+                        <outlet property="localViewRightConstraint" destination="ksn-hd-YyD" id="gFb-R1-l6F"/>
+                        <outlet property="localViewWidthConstraint" destination="WS4-Nx-Fou" id="f3c-qK-mnN"/>
+                        <outlet property="remoteView" destination="zMl-wn-tbg" id="MPw-UE-zE5"/>
+                        <outlet property="remoteViewBottomConstraint" destination="5Or-ve-aVF" id="XxI-qe-EXA"/>
+                        <outlet property="remoteViewLeftConstraint" destination="rP8-DY-hhf" id="KN1-Lj-PqQ"/>
+                        <outlet property="remoteViewRightConstraint" destination="93Q-7P-AUD" id="Vxv-yK-HkB"/>
+                        <outlet property="remoteViewTopConstraint" destination="k4q-Pk-d1l" id="IBM-po-fTQ"/>
+                        <outlet property="videoButton" destination="Ruc-3X-s7Y" id="YMn-IC-Yd0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXg-cT-O2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="1161"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="audioOff" width="16" height="17"/>
+        <image name="audioOn" width="13" height="17"/>
+        <image name="hangup" width="25" height="9"/>
+        <image name="videoOff" width="19" height="19"/>
+        <image name="videoOn" width="18" height="14"/>
+    </resources>
+</document>
